@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(13, 34, 52);
+    color: rgb(215, 233, 249);
+    font-family: "Press Start 2P";
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+h1{
+    padding: 2% 10% 2% ;
+}
+.row{
+   padding: 2% 10%; 
+}
+.container{
+    padding: 2% 14%;
+}
+button{
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    border: 8px solid rgb(1, 14, 26);
+    border-radius: 40px;
+    margin: 1%;
+    font-size: 40px;
+    color: rgb(9, 32, 53);
+}
+.red{
+    background-color: rgb(228, 3, 3);
+}
+.blue{
+    background-color: rgb(4, 4, 199);
+}
+.green{
+    background-color: rgb(0, 201, 0);
+}
+.yellow{
+    background-color: rgb(217, 217, 4);
+}
+
+#start-button{
+    height: 30px;
+    width: 80px;
+    font-size: 10px;
+    border: 2px solid rgb(22, 26, 30);
+    background-color: rgb(215, 233, 249);
+    box-shadow: rgb(74, 118, 162) 2px 3px 3px;
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    button{
+        height: 150px;
+        width: 150px;
+    }
+    h1{
+        padding: 10%;
+    }
+    #start-button{
+        display: inline-block;
+    }
+}
+
+
+/* shadow */
+.pressed {
+    box-shadow: rgb(255, 255, 255) 0px 5px 15px;
+  }
+.body{
+    background-color: rgb(252, 5, 5);
+}
