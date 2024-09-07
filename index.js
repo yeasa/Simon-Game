@@ -10,7 +10,7 @@ function buttonHighlight(currentkey){
     button.classList.add("pressed");
     setTimeout(function(){
         button.classList.remove("pressed")
-    }, 500);
+    }, 300);
 }
 
 
@@ -76,18 +76,36 @@ function gameOver(){
     document.querySelector("body").classList.add("body")
     setTimeout(() => document.querySelector("body").classList.remove("body"), 500)
     level = 0;
-    document.querySelector("h1").textContent = `Press any key to enter`
+    headingUpdate();
     colorList = [];
     isPlayerTurn = false;
 }
 
+// screen based heading
+function headingUpdate(){
+    if (window.innerWidth < 768){
+        document.querySelector("h1").textContent = `Click on start button to begin`
+    }
+    else{
+        document.querySelector("h1").textContent = `Press any key to start`
+    }
+}
+window.addEventListener("load", headingUpdate);
+window.addEventListener("resize", headingUpdate);
 
+document.querySelector('.help-button').addEventListener('click',function(){
+    document.querySelector('.hidden').classList.toggle('hide');
+    document.querySelector('.game-content').classList.toggle('blur-background')
+});
 
 
 document.addEventListener('keydown', function(){
     startGame();
 });
-document.addEventListener("focus", startGame);
+document.querySelector('.start-button').addEventListener('click', function(){
+    startGame();
+})
+// document.addEventListener("focus", startGame);
 
 for (i = 0; i<4; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
